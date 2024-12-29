@@ -192,52 +192,57 @@ class Train:
         time1.set(time.strftime("%H:%M:%S")) #TIME
 
 #==============================================Select Class==============================================================================================
-        lblClass = (Label(topLeft1,font=("arial",14,"bold"),text="Class",bd=10,width=22,height=3)).grid(row=0,column=0,sticky=W)
-        chkStandard = (Checkbutton(topLeft1,font=("arial",14,"bold"),text="Standard",height=3,variable=var1,onvalue=1,offvalue=0)).grid(row=1,column=0,sticky=W)
-        chkEconomy = (Checkbutton(topLeft1, font=("arial",14,"bold"), text="Economy",height=3, variable=var2, onvalue=1,
-                                   offvalue=0)).grid(row=2, column=0, sticky=W)
-        chkFirstClass = (Checkbutton(topLeft1, font=("arial",14,"bold"), text="First Class",height=3, variable=var3, onvalue=1,
-                                   offvalue=0)).grid(row=3, column=0, sticky=W)
+        lblClass = ((Label(topLeft1,font=("arial",14,"bold"),text="Class",bd=10,width=22,height=3))
+                    .grid(row=0,column=0,sticky=W))
+        chkStandard = ((Checkbutton(topLeft1,font=("arial",14,"bold"),text="Standard",height=3,variable=var1,onvalue=1,offvalue=0))
+                    .grid(row=1,column=0,sticky=W))
+        chkEconomy = ((Checkbutton(topLeft1, font=("arial",14,"bold"), text="Economy",height=3, variable=var2, onvalue=1,offvalue=0))
+                    .grid(row=2, column=0, sticky=W))
+        chkFirstClass = ((Checkbutton(topLeft1, font=("arial",14,"bold"), text="First Class",height=3, variable=var3, onvalue=1,offvalue=0))
+                    .grid(row=3, column=0, sticky=W))
 
-        # ==============================================Select Destination==============================================================================================
-        lblSelect = (Label(topLeft3, font=("arial",14,"bold"), text="Select Destination", bd=10,height=3)).grid(row=0, column=0, sticky=W,columnspan=2)
-        lblDestination = (Label(topLeft3, font=("arial",14,"bold"), text="Destination", bd=10,height=3)).grid(row=1, column=0, sticky=W)
+# ==============================================Select Destination==============================================================================================
+        lblSelect = ((Label(topLeft3, font=("arial",14,"bold"), text="Select Destination", bd=10,height=3))
+                    .grid(row=0, column=0, sticky=W,columnspan=2))
+        lblDestination = ((Label(topLeft3, font=("arial",14,"bold"), text="Destination", bd=10,height=3))
+                    .grid(row=1, column=0, sticky=W))
         combDestination = ttk.Combobox(topLeft3,textvariable=var9,font=("arial", 14, "bold"),height=3,state = "readonly",width=8)
         combDestination["value"] = ("","Kilburn","Preston","Oxford","Leeds","Brixton")
         combDestination.current(0)
         combDestination.grid(row=1, column=1)
-        chkAdult = (Checkbutton(topLeft3, font=("arial",14,"bold"), bd=10,text="Adult", variable=var4, onvalue=1,
-                                   offvalue=0)).grid(row=2, column=0, sticky=W)
-        chkChild = (Checkbutton(topLeft3, font=("arial",14,"bold"), bd=10,text="Child", variable=var5, onvalue=1,
-                                  offvalue=0)).grid(row=3, column=0, sticky=W)
+        chkAdult = ((Checkbutton(topLeft3, font=("arial",14,"bold"), bd=10,text="Adult", variable=var4, onvalue=1,offvalue=0))
+                    .grid(row=2, column=0, sticky=W))
+        chkChild = ((Checkbutton(topLeft3, font=("arial",14,"bold"), bd=10,text="Child", variable=var5, onvalue=1,offvalue=0))
+                    .grid(row=3, column=0, sticky=W))
 # =========================================== Ticket Type Widgets =================================================================================
-        lblTicketType = (Label(topLeft2, font=("arial", 14, "bold"), text="Ticket Type", bd=10,height=3)).grid(row=0, column=0, sticky=W)
-        chkSingle = (Checkbutton(topLeft2, font=("arial",14,"bold"),bd=10, text="Single", variable=var4, onvalue=1,
-                                   offvalue=0,height=3)).grid(row=1, column=0, sticky=W)
-        entSingle = (Entry(topLeft2, font=("arial", 14, "bold"), textvariable=var12, bd=10)).grid(row=1, column=1,
-                                                                                                 sticky=W)
-        chkReturn = (Checkbutton(topLeft2, font=("arial",14,"bold"), bd=10,text="Return", variable=var5, onvalue=1,
-                                  offvalue=0)).grid(row=2, column=0, sticky=W)
-        entReturn = (Entry(topLeft2, font=("arial", 14, "bold"), textvariable=var6, bd=10)).grid(row=2, column=1,
-                                                                                                 sticky=W)
-        lblComment = (Label(topLeft2, font=("arial", 14, "bold"), text="Comment", bd=10,height=2)).grid(row=3, column=0,
-                                                                                                     sticky=W)
-        entComment = (Entry(topLeft2, font=("arial", 14, "bold"), textvariable=var7, bd=10)).grid(row=3, column=1,
-                                                                                                     sticky=W)
+        lblTicketType = ((Label(topLeft2, font=("arial", 14, "bold"), text="Ticket Type", bd=10,height=3))
+                    .grid(row=0, column=0, sticky=W))
+        chkSingle = ((Checkbutton(topLeft2, font=("arial",14,"bold"),bd=10, text="Single", variable=var4, onvalue=1,offvalue=0,height=3))
+                    .grid(row=1, column=0, sticky=W))
+        entSingle = ((Entry(topLeft2, font=("arial", 14, "bold"), textvariable=var12, bd=10))
+                    .grid(row=1, column=1,sticky=W))
+        chkReturn = ((Checkbutton(topLeft2, font=("arial",14,"bold"), bd=10,text="Return", variable=var5, onvalue=1,offvalue=0))
+                    .grid(row=2, column=0, sticky=W))
+        entReturn = ((Entry(topLeft2, font=("arial", 14, "bold"), textvariable=var6, bd=10))
+                    .grid(row=2, column=1,sticky=W))
+        lblComment = ((Label(topLeft2, font=("arial", 14, "bold"), text="Comment", bd=10,height=2))
+                    .grid(row=3, column=0,sticky=W))
+        entComment = ((Entry(topLeft2, font=("arial", 14, "bold"), textvariable=var7, bd=10))
+                    .grid(row=3, column=1,sticky=W))
 
 # =========================================== Tax,subtotal,total Widgets =================================================================================
-        lblTax = (Label(bottomLeft1, font=("arial", 14, "bold"), text="State Tax", bd=8)).grid(row=0, column=0,
-                                                                                                     sticky=W)
-        entTax = (Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Tax, bd=5,width=40)).grid(row=0, column=1,
-                                                                                                 sticky=W)
-        lblSubTotal = (Label(bottomLeft1, font=("arial", 14, "bold"), text="Sub Total", bd=8)).grid(row=1, column=0,
-                                                                                                     sticky=W)
-        entSubTotal = (Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=SubTotal, bd=5,width=40)).grid(row=1, column=1,
-                                                                                                 sticky=W)
-        lblTotal = (Label(bottomLeft1, font=("arial", 14, "bold"), text="Total", bd=8)).grid(row=2, column=0,
-                                                                                                     sticky=W)
-        entTotal = (Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Total, bd=5,width=40)).grid(row=2, column=1,
-                                                                                                 sticky=W)
+        lblTax = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="State Tax", bd=8))
+                .grid(row=0, column=0,sticky=W))
+        entTax = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Tax, bd=5,width=40))
+                .grid(row=0, column=1,sticky=W))
+        lblSubTotal = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="Sub Total", bd=8))
+                .grid(row=1, column=0,sticky=W))
+        entSubTotal = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=SubTotal, bd=5,width=40))
+                .grid(row=1, column=1,sticky=W))
+        lblTotal = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="Total", bd=8))
+                    .grid(row=2, column=0,sticky=W))
+        entTotal = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Total, bd=5,width=40))
+                    .grid(row=2, column=1,sticky=W))
 # =========================================== Calculator widgets =================================================================================
 
         ############################################### Text Input ######################################################################################################
