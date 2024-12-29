@@ -14,48 +14,48 @@ class Train:
     def __init__(self,root):
         self.root = root
         self.root.title("Advanced Train Management System")
-        self.root.geometry("1920x1080+0+0")
+        self.root.geometry("1384x634+0+0")
         # self.root.config)
 
         MainFrame = Frame(self.root,width=1350,height=700,bd=10,relief=RIDGE)
         MainFrame.grid()
 
-        TopFrame1 = Frame(MainFrame,width=1340,height=100,bd=10,relief=RIDGE)
+        TopFrame1 = Frame(MainFrame,width=1340,height=100,bd=0,relief=RIDGE)
         TopFrame1.grid()
 
-        TopFrame2 = Frame(MainFrame,width=1300,height=500,bd=10,relief=RIDGE)
+        TopFrame2 = Frame(MainFrame,width=1300,height=500,bd=5,relief=RIDGE)
         TopFrame2.grid()
 
         f1 = Frame(TopFrame2,width=890,height=500,bd=5,relief=RIDGE)
         f1.grid(row=1,column=0)
 
-        f2 = Frame(TopFrame2,width=400,height=500,pady=2,bd=5,relief=RIDGE)
+        f2 = Frame(TopFrame2,width=400,height=500,pady=2,bd=0,relief=RIDGE)
         f2.grid(row=1,column=1)
 
-        frametopRight = Frame(f2,width=404,height=420,bd=5,relief=RIDGE)
+        frametopRight = Frame(f2,width=404,height=420,bd=0,relief=RIDGE)
         frametopRight.pack(side=TOP)
-        frameBottomRight = Frame(f2,width=408,height=100,bd=5,pady=15,relief=RIDGE)
+        frameBottomRight = Frame(f2,width=408,height=100,bd=0,pady=15,relief=RIDGE)
         frameBottomRight.pack(side=BOTTOM)
 
-        f1a = Frame(f1,width=900,height=330,bd=5,relief=RIDGE)
+        f1a = Frame(f1,width=900,height=330,bd=0,relief=RIDGE)
         f1a.pack(side=TOP)
-        f2a = Frame(f1,width=900,height=320,bd=5,relief=RIDGE)
+        f2a = Frame(f1,width=900,height=320,bd=0,relief=RIDGE)
         f2a.pack(side=BOTTOM)
 
-        topLeft1 = Frame(f1a,width=300,height=200,bd=5,padx=20,pady=1,relief=RIDGE)
+        topLeft1 = Frame(f1a,width=300,height=200,bd=2,padx=20,pady=1,relief=RIDGE)
         topLeft1.pack(side=LEFT)
-        topLeft2 = Frame(f1a,width=300,height=200,bd=5,relief=RIDGE)
+        topLeft2 = Frame(f1a,width=300,height=200,bd=2,relief=RIDGE)
         topLeft2.pack(side=RIGHT)
-        topLeft3 = Frame(f1a,width=300,height=200,bd=5,pady=12,relief=RIDGE)
+        topLeft3 = Frame(f1a,width=300,height=200,bd=2,pady=12,relief=RIDGE)
         topLeft3.pack(side=RIGHT)
 
-        bottomLeft1 = Frame(f2a,width=450,height=300,bd=5,pady=12,relief=RIDGE)
+        bottomLeft1 = Frame(f2a,width=450,height=300,bd=2,pady=12,relief=RIDGE)
         bottomLeft1.pack(side=LEFT)
 
-        bottomLeft2 = Frame(f2a,width=450,height=300,bd=5,relief=RIDGE)
+        bottomLeft2 = Frame(f2a,width=450,height=300,pady=8,bd=2,relief=RIDGE)
         bottomLeft2.pack(side=RIGHT)
 
-        lblTitle = Label(TopFrame1,font=("arial",40,"bold"),text="Train Ticketing Systems",bd=5,width=41,padx=4,justify="center")
+        lblTitle = Label(TopFrame1,font=("arial",40,"bold"),text="Train Ticketing Systems",bd=0,width=41,padx=4,justify="center")
         lblTitle.grid(row=0,column=0)
 
 #=============================================== Variables Declaration ===============================================================
@@ -192,7 +192,7 @@ class Train:
         time1.set(time.strftime("%H:%M:%S")) #TIME
 
 #==============================================Select Class==============================================================================================
-        lblClass = ((Label(topLeft1,font=("arial",14,"bold"),text="Class",bd=10,width=22,height=3))
+        lblClass = ((Label(topLeft1,font=("arial",14,"bold"),text="Class",bd=10,width=22,pady=9,height=2))
                     .grid(row=0,column=0,sticky=W))
         chkStandard = ((Checkbutton(topLeft1,font=("arial",14,"bold"),text="Standard",height=3,variable=var1,onvalue=1,offvalue=0))
                     .grid(row=1,column=0,sticky=W))
@@ -200,10 +200,12 @@ class Train:
                     .grid(row=2, column=0, sticky=W))
         chkFirstClass = ((Checkbutton(topLeft1, font=("arial",14,"bold"), text="First Class",height=3, variable=var3, onvalue=1,offvalue=0))
                     .grid(row=3, column=0, sticky=W))
-
+# =========================================Space =====================================================================================
+        lblsp = Label(topLeft1, font=("arial", 14, "bold"), width=22, height=1, bd=0, relief="sunken")
+        lblsp.grid(row=11, column=0, columnspan=4)
 # ==============================================Select Destination==============================================================================================
-        lblSelect = ((Label(topLeft3, font=("arial",14,"bold"), text="Select Destination", bd=10,height=3))
-                    .grid(row=0, column=0, sticky=W,columnspan=2))
+        lblSelect = ((Label(topLeft3, font=("arial",14,"bold"), text="Select Destination",pady=5, bd=10,height=2))
+                    .grid(row=0, column=0, sticky=W,columnspan=3))
         lblDestination = ((Label(topLeft3, font=("arial",14,"bold"), text="Destination", bd=10,height=3))
                     .grid(row=1, column=0, sticky=W))
         combDestination = ttk.Combobox(topLeft3,textvariable=var9,font=("arial", 14, "bold"),height=3,state = "readonly",width=8)
@@ -214,8 +216,11 @@ class Train:
                     .grid(row=2, column=0, sticky=W))
         chkChild = ((Checkbutton(topLeft3, font=("arial",14,"bold"), bd=10,text="Child", variable=var5, onvalue=1,offvalue=0))
                     .grid(row=3, column=0, sticky=W))
+# =========================================Space =====================================================================================
+        lblsp = Label(topLeft3, font=("arial", 14, "bold"), width=22, height=1, bd=0, relief="sunken")
+        lblsp.grid(row=11, column=0, columnspan=4)
 # =========================================== Ticket Type Widgets =================================================================================
-        lblTicketType = ((Label(topLeft2, font=("arial", 14, "bold"), text="Ticket Type", bd=10,height=3))
+        lblTicketType = ((Label(topLeft2, font=("arial", 14, "bold"), text="Ticket Type",pady=8, bd=10,height=3))
                     .grid(row=0, column=0, sticky=W))
         chkSingle = ((Checkbutton(topLeft2, font=("arial",14,"bold"),bd=10, text="Single", variable=var4, onvalue=1,offvalue=0,height=3))
                     .grid(row=1, column=0, sticky=W))
@@ -231,21 +236,24 @@ class Train:
                     .grid(row=3, column=1,sticky=W))
 
 # =========================================== Tax,subtotal,total Widgets =================================================================================
-        lblTax = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="State Tax", bd=8))
+        lblTax = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="State Tax", pady=22,padx=5,bd=8))
                 .grid(row=0, column=0,sticky=W))
-        entTax = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Tax, bd=5,width=40))
+        entTax = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Tax, bd=5,width=20))
                 .grid(row=0, column=1,sticky=W))
-        lblSubTotal = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="Sub Total", bd=8))
+        lblSubTotal = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="Sub Total",pady=22, padx=5,bd=8))
                 .grid(row=1, column=0,sticky=W))
-        entSubTotal = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=SubTotal, bd=5,width=40))
+        entSubTotal = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=SubTotal, bd=5,width=20))
                 .grid(row=1, column=1,sticky=W))
-        lblTotal = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="Total", bd=8))
+        lblTotal = ((Label(bottomLeft1, font=("arial", 14, "bold"), text="Total",pady=22,padx=5, bd=8))
                     .grid(row=2, column=0,sticky=W))
-        entTotal = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Total, bd=5,width=40))
+        entTotal = ((Entry(bottomLeft1, font=("arial", 14, "bold"), textvariable=Total, bd=5,width=20))
                     .grid(row=2, column=1,sticky=W))
+# =========================================Space =====================================================================================
+        lblsp = Label(bottomLeft1, font=("arial", 14, "bold"), width=18, height=1, bd=0, relief="sunken")
+        lblsp.grid(row=3, column=2, columnspan=3)
 # =========================================== Calculator widgets =================================================================================
 
-        ############################################### Text Input ######################################################################################################
+############################################### Text Input ######################################################################################################
 
         self.txtDisplay = Entry(bottomLeft2, font=("arial", 22, "bold"),width=28,bg="powder blue", textvariable=text_Input,insertwidth=4,bd=5,justify="right")
         self.txtDisplay.grid(columnspan=4)
@@ -279,7 +287,7 @@ class Train:
         Subtraction = Button(bottomLeft2,fg="red",bg="coral2",font=("arial",12,"bold"),text="-",width=8,height=1,padx=2,pady=16,bd=2,command=lambda:btnClick("-"))
         Subtraction.grid(row=3,column=3)
 
-        ############################################### Multiplication ######################################################################################################
+############################################### Multiplication ######################################################################################################
 
         self.btn1 = Button(bottomLeft2,fg="red",bg="coral2",font=("arial",12,"bold"),text="1",width=8,height=1,padx=2,pady=16,bd=2,command=lambda:btnClick(1))
         self.btn1.grid(row=4,column=0)
@@ -293,7 +301,7 @@ class Train:
         Multiplication = Button(bottomLeft2,fg="red",bg="coral2",font=("arial",12,"bold"),text="*",width=8,height=1,padx=2,pady=16,bd=2,command=lambda:btnClick("*"))
         Multiplication.grid(row=4,column=3)
 
-        ############################################### Division ######################################################################################################
+############################################### Division ######################################################################################################
 
         self.btn0 = Button(bottomLeft2,fg="red",bg="coral2",font=("arial",12,"bold"),text="0",width=8,height=1,padx=2,pady=16,bd=2,command=lambda:btnClick(0))
         self.btn0.grid(row=5,column=0)
@@ -307,26 +315,30 @@ class Train:
         self.btnEqual = Button(bottomLeft2,fg="red",bg="coral2",font=("arial",12,"bold"),text="=",width=8,height=1,padx=2,pady=16,bd=2)
         self.btnEqual.grid(row=5,column=3)
 
-
+# =========================================Space =====================================================================================
+        lblsp = Label(frameBottomRight, font=("arial", 14, "bold"), width=62, height=4, bd=0, relief="sunken")
+        lblsp.grid(row=9, column=0, columnspan=4)
 
 #=========================================== Button Widgets =================================================================================
 
-        btnTotal = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Total",width=5,height=1,padx=20,pady=16,bd=2)
+        btnTotal = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Total",width=5,height=3,padx=20,pady=16,bd=2)
         btnTotal.grid(row=10,column=0)
 
-        btnClear = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Clear",width=5,height=1,padx=20,pady=16,bd=2)
+        btnClear = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Clear",width=5,height=3,padx=20,pady=16,bd=2)
         btnClear.grid(row=10,column=1)
 
-        btnReset = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Reset",width=5,height=1,padx=20,pady=16,bd=2)
+        btnReset = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Reset",width=5,height=3,padx=20,pady=16,bd=2)
         btnReset.grid(row=10,column=2)
 
-        btnExit = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Exit",width=5,height=1,padx=20,pady=16,bd=2)
+        btnExit = Button(frameBottomRight,fg="red",bg="coral2",font=("arial",14,"bold"),text="Exit",width=5,height=3,padx=20,pady=16,bd=2)
         btnExit.grid(row=10,column=3)
-
+# =========================================Space =====================================================================================
+        lblsp = Label(frameBottomRight, font=("arial", 14, "bold"), width=62, height=4, bd=0, relief="sunken")
+        lblsp.grid(row=11, column=0, columnspan=4)
 
 if __name__ == "__main__":
     root = Tk()
     application = Train(root)
-    sv_ttk.set_theme("dark")
+    sv_ttk.set_theme("light")
     root.mainloop()
 
