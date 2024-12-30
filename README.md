@@ -1,6 +1,7 @@
 ## Advanced Train Ticketing System
 
 
-### UI Structure
+### UI  Design
+ ![light theme](./img/light.png)
+ ![dark theme](./img/dark.png)
 
-### Functionality

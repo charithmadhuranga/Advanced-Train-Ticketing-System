@@ -1786,6 +1786,6 @@ class Train:
 if __name__ == "__main__":
     root = Tk()
     application = Train(root)
-    sv_ttk.set_theme("dark")
+    sv_ttk.set_theme("light")
     root.mainloop()
 
